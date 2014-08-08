@@ -1,14 +1,16 @@
 require "augmentations/version"
 
-class ::Object
-  def self.augment(*mods)
-    include *mods
-    mods.each {|mod| class_eval &mod.augmentation }
+module Augmentations
+  class ::Object
+    def self.augment(*mods)
+      include *mods
+      mods.each {|mod| class_eval &mod.augmentation }
+    end
   end
-end
 
-class ::Module
-  def augmentation(&block)
-    @augmentation ||= block
+  class ::Module
+    def augmentation(&block)
+      @augmentation ||= block
+    end
   end
 end
