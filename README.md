@@ -10,7 +10,7 @@ Why do we need this now ActiveSupport has Concerns? Several reasons.
 
 2: You don't like the fact that ActiveSupport calls them 'Concerns' when they're just modules effectively implementing a form of multiple inheritance.
 
-3: You don't like the module dependency management system built in to ActiveSupport Concerns. (Modules that depend on eachother are a code smell, cyclical dependencies doubly so.)  
+3: You don't like the module dependency management system built in to ActiveSupport Concerns. (Modules that depend on each other are a code smell, cyclical dependencies doubly so.)  
 
 Use it like
 
@@ -62,6 +62,10 @@ And then execute:
 Or install it yourself as:
 
     $ gem install augmentations
+
+Unless you're using Bundler, in your code:
+
+    require 'augmentations'
 
 
 ## Credits
