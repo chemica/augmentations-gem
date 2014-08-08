@@ -4,6 +4,14 @@
 
 It's basically like `include`ing a module, but you can also define class methods and call class methods as you would in the class itself, without (ab)using the `self.included` hook and thus with less boilerplate.
 
+Why do we need this now ActiveSupport has Concerns? Several reasons.
+
+1: You're using plain Ruby or a non-Rails framework and you want the behaviour without the bulk of ActiveSupport.
+
+2: You don't like the fact that ActiveSupport calls them 'Concerns' when they're just modules effectively implementing a form of multiple inheritance.
+
+3: You don't like the module dependency management system built in to ActiveSupport Concerns. (Modules that depend on eachother are a code smell, cyclical dependencies doubly so.)  
+
 Use it like
 
     class User < ActiveRecord::Base
@@ -41,7 +49,7 @@ too.)
 
 ## Installation
 
-This gem is not yet registered. One it is, add this line to your application's Gemfile:
+Add this line to your application's Gemfile:
 
 ```ruby
 gem 'augmentations'
